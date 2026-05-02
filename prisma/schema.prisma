@@ -37,6 +37,8 @@ model Movie {
 
   creator User @relation("MovieCreator", fields: [createdBy], references: [id], onDelete: Cascade)
   watchlistItems WatchlistItem[]
+
+  @@unique([title , releaseYear, createdBy])
 }
 
 model WatchlistItem {
